@@ -1,0 +1,11 @@
+<header class="site-header">
+  <nav class="navbar">
+    <a href="{{ '/' | relative_url }}" class="nav-brand">Plextech <span>/ Curriculum</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+      <li><a href="{{ '/resources/' | relative_url }}" {% if page.url contains '/resources' %}class="active"{% endif %}>Resources</a></li>
+      <li><a href="{{ site.classroom_url }}" class="external" target="_blank" rel="noopener">Classroom</a></li>
+    </ul>
+  </nav>
+</header>

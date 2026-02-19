@@ -1,0 +1,46 @@
+# Plextech Curriculum - Jekyll Configuration
+# GitHub Pages compatible
+
+title: Plextech Curriculum
+description: "Building Elite Engineers — A comprehensive engineering curriculum by Plextech at UC Berkeley"
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+permalink: pretty
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - .git
+  - .gitignore
+  - LICENSE
+
+# Plugins (GitHub Pages compatible)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Site defaults
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+
+# Custom variables
+semester: Spring 2026
+github_repo: https://github.com/Plextech/curriculum
+classroom_url: https://classroom.google.com
