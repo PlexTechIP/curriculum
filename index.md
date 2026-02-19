@@ -27,11 +27,11 @@ title: Home
 
 | Week | Date | Topic | Slides | Lab | Homework |
 |------|------|-------|--------|-----|----------|
-| 1 | Feb 9 | Git & GitHub — Remotes, Branches, Pull Requests | [Slides](https://docs.google.com/presentation/d/1Y7-Y4Ce62mwE4ynnv8rYESPRxcVFpm2h/edit?usp=sharing&ouid=111238298611358469051&rtpof=true&sd=true) | [Git Intro](/labs/git-intro/) | [HW 1.1](https://classroom.google.com/c/ODQ0MTY4NzU4MTU2/a/ODQ0MzgxMjkzODI0/details) [HW 1.2](https://classroom.google.com/c/ODQ0MTY4NzU4MTU2/a/ODQ0MzU0MDI4Njgz/details)|
-| 2 | Feb 16 | HTML, CSS & JavaScript Fundamentals | [Slides](https://docs.google.com/presentation/d/1E1PfttOpVkx8wgADHL4q5WJ5F5D2sZFO/edit?usp=sharing&ouid=111238298611358469051&rtpof=true&sd=true) | [HTML/CSS Intro](/labs/html-css-intro/) | [HW 2.1](https://classroom.google.com/c/ODQ0MTY4NzU4MTU2/a/ODQ1MjE0NzczMDM5/details) [HW 2.2](https://classroom.google.com/c/ODQ0MTY4NzU4MTU2/a/ODQ1MjI0NDM4MTAw/details) |
-| 3 | Feb 23 | React — Components, State, Props | [Slides](#){:.disabled} | [Static React](/labs/static-react/){:.disabled} | [HW 3](#){:.disabled} |
-| 4 | Mar 2 | Flask & HTTP Servers | [Slides](#){:.disabled} | [Flask Intro](/labs/flask-intro/){:.disabled} | [HW 4](#){:.disabled} |
-| 5 | Mar 9 | MongoDB & NoSQL Databases | [Slides](#){:.disabled} | [MongoDB Intro](/labs/mongodb/){:.disabled} | [HW 5](#){:.disabled} |
+| 1 | Feb 9 | Git & GitHub — Remotes, Branches, Pull Requests | [Slides](https://docs.google.com/presentation/d/1Y7-Y4Ce62mwE4ynnv8rYESPRxcVFpm2h/edit?usp=sharing&ouid=111238298611358469051&rtpof=true&sd=true) | [Git Intro]({{ site.baseurl }}/labs/git-intro/) | [HW 1.1](https://classroom.google.com/c/ODQ0MTY4NzU4MTU2/a/ODQ0MzgxMjkzODI0/details) [HW 1.2](https://classroom.google.com/c/ODQ0MTY4NzU4MTU2/a/ODQ0MzU0MDI4Njgz/details)|
+| 2 | Feb 16 | HTML, CSS & JavaScript Fundamentals | [Slides](https://docs.google.com/presentation/d/1E1PfttOpVkx8wgADHL4q5WJ5F5D2sZFO/edit?usp=sharing&ouid=111238298611358469051&rtpof=true&sd=true) | [HTML/CSS Intro]({{ site.baseurl }}/labs/html-css-intro/) | [HW 2.1](https://classroom.google.com/c/ODQ0MTY4NzU4MTU2/a/ODQ1MjE0NzczMDM5/details) [HW 2.2](https://classroom.google.com/c/ODQ0MTY4NzU4MTU2/a/ODQ1MjI0NDM4MTAw/details) |
+| 3 | Feb 23 | React — Components, State, Props | [Slides](#){:.disabled} | [Static React]({{ site.baseurl }}/labs/static-react/){:.disabled} | [HW 3](#){:.disabled} |
+| 4 | Mar 2 | Flask & HTTP Servers | [Slides](#){:.disabled} | [Flask Intro]({{ site.baseurl }}/labs/flask-intro/){:.disabled} | [HW 4](#){:.disabled} |
+| 5 | Mar 9 | MongoDB & NoSQL Databases | [Slides](#){:.disabled} | [MongoDB Intro]({{ site.baseurl }}/labs/mongodb/){:.disabled} | [HW 5](#){:.disabled} |
 | 6 | Mar 16 | TBD | — | — | — |
 | 7 | Mar 23 | *Spring Break — No Meeting* | — | — | — |
 | 8 | Mar 30 | TBD | — | — | — |
