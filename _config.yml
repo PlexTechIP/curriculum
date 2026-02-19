@@ -3,8 +3,8 @@
 
 title: Plextech Curriculum
 description: "Building Elite Engineers — A comprehensive engineering curriculum by Plextech at UC Berkeley"
-baseurl: ""
-url: ""
+baseurl: "/curriculum"
+url: "https://plextechip.github.io"
 
 # Build settings
 markdown: kramdown
