@@ -392,6 +392,23 @@ td a.disabled {
 
 .resource-list .desc { color: var(--gray-400); font-size: 0.83rem; }
 
+/* --- Calendar embed --- */
+.calendar-embed {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.calendar-embed iframe {
+  display: block;
+  width: 100%;
+  height: calc(100vh - 160px);
+  min-height: 700px;
+  border: 0;
+}
+
 /* --- Footer --- */
 .site-footer {
   background: var(--gray-100);

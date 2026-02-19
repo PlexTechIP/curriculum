@@ -8,12 +8,59 @@
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 <body>
-  {% include header.html %}
-  <main class="container">
-    {{ content }}
-  </main>
-  {% include footer.html %}
+
+  <div id="pw-gate" style="display:none;position:fixed;inset:0;background:var(--white);z-index:9999;display:flex;align-items:center;justify-content:center;">
+    <div style="width:100%;max-width:360px;padding:2rem;text-align:center;">
+      <div style="font-size:1.5rem;font-weight:700;color:var(--orange);margin-bottom:0.25rem;">Plextech</div>
+      <div style="font-size:0.9rem;color:var(--gray-600);margin-bottom:1.5rem;">Enter the password to continue</div>
+      <input id="pw-input" type="password" placeholder="Password" autofocus
+        style="width:100%;padding:0.6rem 0.85rem;border:1px solid var(--border);border-radius:var(--radius);font-size:0.95rem;outline:none;margin-bottom:0.75rem;">
+      <div id="pw-error" style="display:none;color:#c0392b;font-size:0.83rem;margin-bottom:0.6rem;">Incorrect password. Try again.</div>
+      <button onclick="checkPassword()"
+        style="width:100%;padding:0.6rem;background:var(--orange);color:#fff;border:none;border-radius:var(--radius);font-size:0.95rem;font-weight:600;cursor:pointer;">
+        Enter
+      </button>
+    </div>
+  </div>
+
+  <div id="site-content" style="display:none;">
+    {% include header.html %}
+    <main class="container">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+  </div>
+
   <script>
+    (function() {
+      var gate = document.getElementById('pw-gate');
+      var content = document.getElementById('site-content');
+      if (sessionStorage.getItem('plextech_auth') === '1') {
+        gate.style.display = 'none';
+        content.style.display = 'block';
+      } else {
+        gate.style.display = 'flex';
+        content.style.display = 'none';
+      }
+    })();
+
+    function checkPassword() {
+      var val = document.getElementById('pw-input').value;
+      if (val === 'merbaddie123') {
+        sessionStorage.setItem('plextech_auth', '1');
+        document.getElementById('pw-gate').style.display = 'none';
+        document.getElementById('site-content').style.display = 'block';
+      } else {
+        document.getElementById('pw-error').style.display = 'block';
+        document.getElementById('pw-input').value = '';
+        document.getElementById('pw-input').focus();
+      }
+    }
+
+    document.getElementById('pw-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') checkPassword();
+    });
+
     document.querySelector('.nav-toggle').addEventListener('click', function() {
       document.querySelector('.nav-links').classList.toggle('open');
     });
