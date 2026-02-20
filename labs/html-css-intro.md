@@ -45,7 +45,7 @@ start ./activity.html
 You'll see an empty page. Complete the following:
 
 - Add a **title** of your choice to the webpage
-- Add a **favicon** of your choice
+- Add a [**favicon**](https://www.w3schools.com/html/html_favicon.asp) of your choice
 - Change the **author** to your name
 - Add a custom **description**
 
@@ -99,7 +99,7 @@ Full guide: [CSS Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-f
 Build out the body of `activity.html` with the following structure. Use **inline styling** for now.
 
 - A **header** with a title
-- A **sidebar or navbar**
+- A [**sidebar or navbar**](https://www.w3schools.com/tags/tag_nav.asp)
 - A **main body** with multiple images
 - A **footer**
 
@@ -107,7 +107,95 @@ Build out the body of `activity.html` with the following structure. Use **inline
 
 ---
 
-## Part 3: JavaScript
+## Part 3: CSS Styling
+
+There are three ways to apply CSS:
+
+| Type | Where | Notes |
+|------|-------|-------|
+| **Inline** | `style` attribute on each element | Quick but messy |
+| **Internal** | `<style>` tag in `<head>` | Better organization |
+| **External** | Separate `.css` file linked with `<link>` | Best practice ✓ |
+
+### Selectors
+
+```css
+/* All <p> tags */
+p { color: green; }
+
+/* Multiple tags — comma-separated */
+p, h1 { color: green; }
+
+/* Element with id="example" — IDs must be unique on the page */
+#example { font-size: 20px; }
+
+/* All elements with class="example" — many elements can share a class */
+.example { font-size: 30px; }
+
+/* Chain classes: elements with both "example" and "other" */
+.example.other { color: blue; }
+
+/* <h1> that is a direct child of a <div> */
+div > h1 { color: red; }
+```
+
+> **`id` vs `class`:** Use `id` for a single unique element (e.g. `#navbar`). Use `class` for styles applied to many elements (e.g. `.card`).
+
+To link an external stylesheet in your HTML:
+
+```html
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+```
+
+### Your Task
+
+Transfer all your inline styles from `activity.html` into an **external CSS file** and link it.
+
+---
+
+## Divs & Rectangles Task
+
+### Intro
+
+Now that you understand HTML and CSS basics, practice **flexbox layout** by recreating a set of styled rectangles. This is a classic layout exercise used in Brown University's CSCI 1320.
+
+### Resources
+
+- [CSS Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [MDN Web Docs](https://developer.mozilla.org/), [W3Schools](https://www.w3schools.com/), Stack Overflow
+
+### Your Task
+
+Open `index.html`. There are 9 green rectangles — the first two are already built for you.
+
+
+**Add divs and styles inside the next 7 to match the finished layout. The blocks must be responsive** — they should resize correctly when the window narrows.
+
+### Row Requirements
+
+| Row | Behavior | Hint |
+|-----|----------|------|
+| **3** | Red and blue ends stay fixed width; green space shrinks | Use `justify-content` |
+| **4** | Blue end stays fixed; red shrinks | Use `flex-grow` on the red div |
+| **5** | Red square stays fixed, always centered in green area | Fixed size + `justify-content: center` + `align-items: center` |
+| **6** | Blue stays fixed and centered; red rectangles shrink on both sides | Use two red divs |
+| **7** | Red stays the same width | Nest divs, use `background-color: transparent` |
+| **8** | Orange rectangles stay fixed; green space between them shrinks | Fixed-width orange divs |
+| **9** | Green space stays fixed; orange rectangles narrow | Fixed-width gap between flex children |
+
+### Rules
+
+- Only use `<div>` elements inside the wrapper divs
+- No inner divs should have `background-color: green`
+- Colors: `red`, `blue`, `orange`
+- Reference dimensions: `20px`, `40px`, `80px`
+
+---
+
+
+## Part 4: JavaScript
 
 To add interactivity, use the `<script>` tag inside `<body>`. Key syntax:
 
@@ -161,97 +249,11 @@ Use a variety of shades for each theme — your choice of colors.
 
 ---
 
-## Part 4: CSS Styling
-
-There are three ways to apply CSS:
-
-| Type | Where | Notes |
-|------|-------|-------|
-| **Inline** | `style` attribute on each element | Quick but messy |
-| **Internal** | `<style>` tag in `<head>` | Better organization |
-| **External** | Separate `.css` file linked with `<link>` | Best practice ✓ |
-
-### Selectors
-
-```css
-/* All <p> tags */
-p { color: green; }
-
-/* Multiple tags — comma-separated */
-p, h1 { color: green; }
-
-/* Element with id="example" — IDs must be unique on the page */
-#example { font-size: 20px; }
-
-/* All elements with class="example" — many elements can share a class */
-.example { font-size: 30px; }
-
-/* Chain classes: elements with both "example" and "other" */
-.example.other { color: blue; }
-
-/* <h1> that is a direct child of a <div> */
-div > h1 { color: red; }
-```
-
-> **`id` vs `class`:** Use `id` for a single unique element (e.g. `#navbar`). Use `class` for styles applied to many elements (e.g. `.card`).
-
-To link an external stylesheet in your HTML:
-
-```html
-<head>
-    <link rel="stylesheet" href="styles.css">
-</head>
-```
-
-### Your Task
-
-Transfer all your inline styles from `activity.html` into an **external CSS file** and link it.
-
----
-
 ## JavaScript Assignment
 
 Complete the exercises at [W3Schools JS Exercises](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_variables1).
 
 For anything not covered in lecture, look it up!
-
----
-
-## Divs & Rectangles Assignment
-
-### Intro
-
-Now that you understand HTML and CSS basics, practice **flexbox layout** by recreating a set of styled rectangles. This is a classic layout exercise used in Brown University's CSCI 1320.
-
-### Resources
-
-- [CSS Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [MDN Web Docs](https://developer.mozilla.org/), [W3Schools](https://www.w3schools.com/), Stack Overflow
-
-### Your Task
-
-Open `part1/index.html`. There are 9 green rectangles — the first two are already built for you.
-
-**Add divs and styles inside the next 7 to match the finished layout. The blocks must be responsive** — they should resize correctly when the window narrows.
-
-### Row Requirements
-
-| Row | Behavior | Hint |
-|-----|----------|------|
-| **3** | Red and blue ends stay fixed width; green space shrinks | Use `justify-content` |
-| **4** | Blue end stays fixed; red shrinks | Use `flex-grow` on the red div |
-| **5** | Red square stays fixed, always centered in green area | Fixed size + `justify-content: center` + `align-items: center` |
-| **6** | Blue stays fixed and centered; red rectangles shrink on both sides | Use two red divs |
-| **7** | Red stays the same width | Nest divs, use `background-color: transparent` |
-| **8** | Orange rectangles stay fixed; green space between them shrinks | Fixed-width orange divs |
-| **9** | Green space stays fixed; orange rectangles narrow | Fixed-width gap between flex children |
-
-### Rules
-
-- Only use `<div>` elements inside the wrapper divs
-- No inner divs should have `background-color: green`
-- Colors: `red`, `blue`, `orange`
-- Reference dimensions: `20px`, `40px`, `80px`
 
 ---
 
