@@ -1,175 +1,185 @@
 ---
 layout: default
-title: "Week 3: Static React — Counter App"
+title: "Week 3: WiFi Monitor — React Project"
 ---
 
-# Static React — Counter App
+# WiFi Monitor — React Project
 
-React is a JavaScript library for building interactive user interfaces. In this lab you'll build a counter app and learn core React concepts: components, state, and props.
+<a href="https://github.com/bradley-tian/wifi-monitor-curriculum-project" class="assignment-btn" target="_blank" rel="noopener">Get Starter Code on GitHub →</a>
 
----
+Created by Bradley Tian (bradley_tian@berkeley.edu)
 
-## Key Concepts
-
-| Term | Definition |
-|------|-----------|
-| **Component** | A reusable piece of UI that returns JSX |
-| **State** | Variables stored inside a component; when state changes, the component re-renders |
-| **Props** | Data passed from a parent component to a child component |
+For PlexTech Curriculum Use Only. Do not redistribute.
 
 ---
 
-## Setup
+## Part 1: JavaScript Basics
 
-1. Pull starter code:
-   ```bash
-   git pull starter main
-   ```
+Before diving into React, make sure you're comfortable with basic JavaScript. To add interactivity to HTML, use the `<script>` tag inside `<body>`. Key syntax:
 
-2. Navigate into the project folder:
-   ```bash
-   cd "Static React"
-   ```
+```javascript
+// Variables
+const name = "Plextech";  // read-only reference
+let count = 0;             // reassignable
+var x = 5;                 // also reassignable (older style)
 
-3. Create a new React app:
-   ```bash
-   npm install create-react-app
-   npx create-react-app counter-app
-   ```
-
-4. Start the dev server:
-   ```bash
-   cd counter-app
-   npm start
-   ```
-
----
-
-## Your Task: Counter App
-
-You'll be building [this counter app](https://i1.wp.com/www.techomoro.com/wp-content/uploads/2020/04/counter-app-working.gif?fit=640%2C335&ssl=1) — an increment/decrement counter. Feel free to make it prettier!
-
----
-
-## Walkthrough
-
-### Step 1: Create a Button Component
-
-Both the `+` and `-` buttons share the same structure, so build a reusable **Button** component.
-
-Create `src/components/Button.js`:
-
-```jsx
-// components/Button.js
-import React from 'react';
-
-var Button = ({title, task}) => {
-    return (
-        <button onClick={task}>{title}</button>
-    );
+// Functions
+function greet(p1, p2) {
+    // BODY
 }
-
-export default Button;
 ```
 
-**Breaking it down:**
+To reference elements on the page, use the `document` object:
 
-- `import React from 'react'` — required in every React file
-- `({title, task})` — destructures props; equivalent to `props.title` and `props.task`
-- `onClick={task}` — attaches the passed-in function as the click handler
-- `export default Button` — makes this component importable elsewhere
-
-**Named vs. Default Exports:**
-- **Default export**: `import Button from './Button'` — one per file
-- **Named export**: `import { Button } from './Button'` — multiple allowed per file
-
----
-
-### Step 2: State in App.js
-
-In `App.js`, set up state to track the count.
-
-```jsx
-import React, { useState } from 'react';
-import Button from './components/Button';
-
-function App() {
-    const [count, setCount] = useState(0);
-
-    const incrementCount = () => setCount(count + 1);
-    const decrementCount = () => setCount(count - 1);
-
-    return (
-        <div>
-            <h1>Counter</h1>
-            <Button title="+" task={incrementCount} />
-            <h2>{count}</h2>
-            <Button title="-" task={decrementCount} />
-        </div>
-    );
-}
-
-export default App;
+```javascript
+document.getElementById("my-id")
 ```
 
-**Why `task={incrementCount}` and not `task={incrementCount()}`?**
+Example — display today's date:
 
-- `task={incrementCount}` — passes the **function reference** (correct ✓)
-- `task={incrementCount()}` — **calls** the function immediately and passes its return value (wrong ✗)
-- `task={() => incrementCount()}` — also correct, an arrow function that calls it on click
+```html
+<script>
+    let d = new Date();
+    document.body.innerHTML = "<h1>Today's date is " + d + "</h1>";
+</script>
+```
 
----
+Example — button that changes text color on click:
 
-### Step 3: Style It
+```html
+<p id="demo">click on the button</p>
+<button onclick="green()">Change to green</button>
+<script>
+    function green() {
+        var el = document.getElementById("demo");
+        el.style.color = "#00FF00";
+    }
+</script>
+```
 
-Add your own CSS to `src/App.css` or use inline styles to make the counter look polished. Get creative!
+### Your Task
 
----
+Add two buttons to your header that toggle **light mode** and **dark mode**. These should change:
+- Background colors
+- Font colors
 
-## Group Project: Mini Budget App
+Use a variety of shades for each theme — your choice of colors.
 
-Build a two-page budget tracking app using React Router.
-
-### Requirements
-
-#### General (both pages)
-- Use **React Router** to navigate between pages via buttons
-- Create at least **4 different components**
-
-#### Page 1: Data Entry
-- At least **3 food categories** (e.g., apples, donuts, pizza), each with a fixed price
-- A **counter** for each category, displayed in 3 columns
-- A **running list** of purchased items showing name + price per item
-- A **Reset** button that clears all purchases
-
-#### Page 2: Recommendations
-- Display **2 recommendations**:
-  1. One based on **total money spent**
-  2. One based on **distribution of items bought**
-
-### Hints
-
-- Pass data between pages using React Router's state
-- Use `display: grid` or `flex` for 3-column layout
-- Declare separate `useState` variables for each category in the page file and pass them as props to child components
-- Suggested file structure:
-  ```
-  App.js          ← Router lives here
-  pages/
-  components/     ← Button, LogCounter, Recommendation, etc.
-  ```
+**JavaScript Assignment:** Complete the exercises at [W3Schools JS Exercises](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_variables1). For anything not covered in lecture, look it up!
 
 ---
 
-## Resources
+## Prologue
 
-- [Official React Tutorial](https://reactjs.org/tutorial/tutorial.html)
-- [Functional Components vs Class Components](https://medium.com/star-gazers/react-class-vs-functional-components-a49383f65f0e)
-- [JSX Explained](https://www.geeksforgeeks.org/jsx-full-form/)
-- [React Router Docs](https://reactrouter.com/)
+Welcome to the WiFi Monitor Project! This exercise is designed to help you attain a baseline familiarity with the fundamental aspects of JavaScript, React, and frontend development in general while limiting the project scope to a reasonable degree of complexity. Please continue reading to better understand your tasks.
+
+---
+
+## Project Overview
+
+As we all know by this point, the WiFi connection at UC Berkeley is rather unpredictable, and it can be downright frustrating when the network in certain parts of the campus suddenly goes down.
+
+Introducing our very own solution — the **UC Berkeley WiFi Monitor**!
+
+We are building a dashboard where users can input their observations of WiFi signal strengths at different locations on campus and see the real-time network statuses on campus through a map view.
+
+More specifically, below are the key features of this dashboard:
+
+1. Support user submissions, which include but aren't limited to the following fields:
+   - User location
+   - Signal strength
+   - Time of reporting
+
+2. Support storage and retrieval of user-submitted data via connecting to the given backend application.
+
+3. Compute an aggregate wifi strength score for different locations on campus based on user submissions.
+
+4. Display aggregated scores for each location.
+   - **Option 1:** display the scores in the form of a list.
+   - **Option 2 (Extra):** display scores in the form of markings on an interactive map of UC Berkeley.
+
+---
+
+## Project Deliverables
+
+The expected deliverable of this project is a **functional single-page React application** that supports at least the first three functionality criteria mentioned above. Please note that deploying the application is not required — it simply needs to run in your local environment. The map display is an extra challenge, but implementing it would provide you with useful training on importing and using third-party libraries in React.
+
+Here is an example of a possible implementation of the WiFi Monitor (for reference only):
+
+<img src="https://github.com/bradley-tian/wifi-monitor-curriculum-project/raw/main/Frontend%20Demo.png" alt="Frontend Demo" style="max-width:100%;width:600px;height:auto;">
+
+---
+
+## Existing Utilities
+
+First of all, let us walk through the technologies already provided for this project.
+
+This project directory named `wifi-curriculum-project` (or `wifi-monitor-curriculum-project` when cloned) is your starting point. All of your frontend development work should be within this directory, whether it'd be the sub-directories you create or the files you make.
+
+We have also provided a functional backend application for you; it will handle the storage and retrieval of user-submitted data. Instructions on how to set up and interact with the backend can be found below.
+
+**[Backend Server Instructions](https://github.com/bradley-tian/wifi-heatmap-curriculum-backend)**
+
+As for styling your components, we recommend the [Material UI](https://mui.com/material-ui/getting-started/) library. You are free to explore standard CSS frameworks, such as tailwind, but these alternatives may take longer to configure.
+
+Finally, for the map-view display, we recommend looking into the [Leaflet.js](https://leafletjs.com/examples/quick-start/) library.
+
+---
+
+## Getting Started
+
+There are quite a few moving parts, but this project is certainly achievable with the right approaches. Below is a rough development plan that could point you in the right direction, but please feel free to tackle these parts in whichever order and format you find convenient.
+
+### 1. Familiarize yourself with the functionality requirements and the provided technologies
+
+Read through the backend server documentation and go over the **Component** and **Component API** sections of Material UI's API documentation.
+
+### 2. Create a rough design of the frontend interface
+
+Use tools like Figma or sketch by hand. Where should the list or map display be? How are the user input boxes positioned? Feel free to refer to the demo, but it's best to conceive your own UI design — don't overlook this part; it's good practice.
+
+### 3. Think about how you want to handle user inputs
+
+Sure, on a production level we would be capturing the users' live coordinates and their WiFi speed in mb/s. But for the scope of this project, we need to conceive a way to restrain or limit the user inputs so they're easy to record in the database and be used for computation. Perhaps a dropdown list of a number of locations could work? In addition, how will you handle the time of reporting? You could neglect it for this project, or you could, say, flush all outdated user submissions at the end of each day, etc. The choice is yours; this part isn't required for the baseline deliverable.
+
+### 4. Review or research the recommended file structure for a small React project
+
+Look up the functionalities of `index.js` and `app.js`, and create any other files you may need.
+
+This project shouldn't involve a lot of components; for larger projects that contain thousands of components, you may need layers of directories to better organize your components for reusability. Don't worry about this for now; you'll naturally learn how to organize as you go.
+
+### 5. Start building the components for your display
+
+For each component, start by looking up the corresponding frameworks in Material UI and importing them as needed. You should keep the number of vanilla HTML components to a minimum. In addition, we recommend looking into [Themes](https://mui.com/material-ui/customization/theme-components/#theme-default-props) if you find it helpful to standardize the styling of components.
+
+### 6. Research async functions and fetch calls
+
+These will be the essentials for communicating with the backend server. Once covered in lecture, research `useState` and `useEffect` hooks to determine where you can make API calls to store and retrieve user data.
+
+Note that this part may involve running into many unexpected errors; such is the nature of frontend-backend communication, as there are many semantics and details you have to iron out. As a general guide, beware of the following areas:
+
+- **CORS Policy Handling:** if you are experiencing [CORS](https://youtu.be/4KHiSt0oLJ0?si=cWPw-8gMtWrbD8fh) errors, check your request headers to make sure you have the right origins and credentials. Depending on your setup, you may have to edit the CORS configurations in the backend server as well. This [Express.js CORS guide](https://www.geeksforgeeks.org/how-to-allow-cors-in-express/) could help.
+
+- **Bad Payload and Queries:** some endpoints require JSON payloads or query parameters; make sure you are sending the requests with the payloads in the correct format. Use `console.log()` to debug your payloads if you are unsure. If you are having trouble parsing the response data, look up examples of `.then()` usage after `fetch` calls to make sure you're properly unwrapping the API responses.
+
+- Overall, use `console.log()` a lot to help confirm data types and narrow down errors. You can check the output in either the terminal or via the console, accessible via `fn+12`, in your browser.
+
+### 7. Build some simple tester components to display and test the data you retrieve from the backend
+
+When you have the API interactions functional, you can then integrate them into your display components, whether that is the list or the interactive map. By this point, begin building functions that can compute aggregated scores from all user-submitted datapoints on a specific location. What algorithms would you like to use? That is up to you.
+
+### 8. If you decide to go with the map approach
+
+Import the Leaflet.js library and begin tinkering with the frameworks there. Following the [quickstart guide](https://leafletjs.com/examples/quick-start/) is helpful here.
+
+---
+
+## Conclusion
+
+This is quite a comprehensive documentation, but hopefully it provides you with a decent overview of the project and how to get started with frontend development as a whole. If you have any questions, please ask and seek help from your curriculum instructors. Have a great time building the WiFi Monitor!
 
 ---
 
 ## Submission
 
-Push your completed `counter-app/` and group budget app to your forked repository.
+Push your completed WiFi Monitor project to your forked repository. Ensure it runs locally and supports user submissions, backend storage/retrieval, and aggregate score computation.

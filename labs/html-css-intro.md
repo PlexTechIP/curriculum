@@ -7,7 +7,7 @@ title: "Week 2: HTML/CSS Introduction"
 
 <a href="https://classroom.github.com/a/2Qs30stP" class="assignment-btn" target="_blank" rel="noopener">Accept Assignment on GitHub Classroom →</a>
 
-This project will guide you through how to use HTML to build web pages, style them with CSS, and add basic interactivity with JavaScript.
+This project will guide you through how to use HTML to build web pages and style them with CSS.
 
 ---
 
@@ -191,69 +191,6 @@ Open `index.html`. There are 9 green rectangles — the first two are already bu
 - No inner divs should have `background-color: green`
 - Colors: `red`, `blue`, `orange`
 - Reference dimensions: `20px`, `40px`, `80px`
-
----
-
-
-## Part 4: JavaScript
-
-To add interactivity, use the `<script>` tag inside `<body>`. Key syntax:
-
-```javascript
-// Variables
-const name = "Plextech";  // read-only reference
-let count = 0;             // reassignable
-var x = 5;                 // also reassignable (older style)
-
-// Functions
-function greet(p1, p2) {
-    // BODY
-}
-```
-
-To reference elements on the page, use the `document` object:
-
-```javascript
-document.getElementById("my-id")
-```
-
-Example — display today's date:
-
-```html
-<script>
-    let d = new Date();
-    document.body.innerHTML = "<h1>Today's date is " + d + "</h1>";
-</script>
-```
-
-Example — button that changes text color on click:
-
-```html
-<p id="demo">click on the button</p>
-<button onclick="green()">Change to green</button>
-<script>
-    function green() {
-        var el = document.getElementById("demo");
-        el.style.color = "#00FF00";
-    }
-</script>
-```
-
-### Your Task
-
-Add two buttons to your header that toggle **light mode** and **dark mode**. These should change:
-- Background colors
-- Font colors
-
-Use a variety of shades for each theme — your choice of colors.
-
----
-
-## JavaScript Assignment
-
-Complete the exercises at [W3Schools JS Exercises](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_variables1).
-
-For anything not covered in lecture, look it up!
 
 ---
 
