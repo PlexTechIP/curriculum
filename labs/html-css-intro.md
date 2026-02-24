@@ -77,23 +77,6 @@ HTML also provides **semantic elements** that behave exactly like `<div>` but ca
 
 `<header>My Site</header>` and `<div>My Site</div>` render identically — but the semantic version makes your code immediately readable.
 
-### Flexboxes
-
-For positioning, use **flexbox** — a container that automatically arranges its children in a row or column. Enable it with `display: flex` on a parent element.
-
-Key properties:
-
-| Property | What it does |
-|----------|-------------|
-| `flex-direction` | `row` (default) or `column` |
-| `justify-content` | Aligns along main axis: `flex-start`, `center`, `space-between`, etc. |
-| `align-items` | Aligns along cross axis: `center` to vertically center in a row |
-| `gap` | Space between children, e.g. `gap: 10px` |
-| `flex-wrap` | `wrap` or `nowrap` — whether children wrap to a new line |
-| `flex` / `flex-grow` | How much a child grows to fill available space |
-
-Full guide: [CSS Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-
 ### Your Task
 
 Build out the body of `activity.html` with the following structure. Use **inline styling** for now.
@@ -111,11 +94,10 @@ Build out the body of `activity.html` with the following structure. Use **inline
 
 There are three ways to apply CSS:
 
-| Type | Where | Notes |
-|------|-------|-------|
-| **Inline** | `style` attribute on each element | Quick but messy |
-| **Internal** | `<style>` tag in `<head>` | Better organization |
-| **External** | Separate `.css` file linked with `<link>` | Best practice ✓ |
+| Type | Where |
+|------|-------|
+| **Internal** | `<style>` tag in `<head>` |
+| **External** | Separate `.css` file linked with `<link>` |
 
 ### Selectors
 
@@ -154,6 +136,23 @@ To link an external stylesheet in your HTML:
 Transfer all your inline styles from `activity.html` into an **external CSS file** and link it.
 
 ---
+
+## Flexboxes
+
+For positioning, use **flexbox** — a container that automatically arranges its children in a row or column. Enable it with `display: flex` on a parent element.
+
+Key properties:
+
+| Property | What it does |
+|----------|-------------|
+| `flex-direction` | `row` (default) or `column` |
+| `justify-content` | Aligns along main axis: `flex-start`, `center`, `space-between`, etc. |
+| `align-items` | Aligns along cross axis: `center` to vertically center in a row |
+| `gap` | Space between children, e.g. `gap: 10px` |
+| `flex-wrap` | `wrap` or `nowrap` — whether children wrap to a new line |
+| `flex` / `flex-grow` | How much a child grows to fill available space |
+
+Full guide: [CSS Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ## Divs & Rectangles Task
 
