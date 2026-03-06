@@ -5,9 +5,11 @@ title: "Week 4: WiFi Monitor — React Project"
 
 # WiFi Monitor — React Project
 
-<a href="https://github.com/bradley-tian/wifi-monitor-curriculum-project" class="assignment-btn" target="_blank" rel="noopener">Get Starter Code on GitHub →</a>
+<a href="https://classroom.github.com/a/gLaQVD8n" class="assignment-btn" target="_blank" rel="noopener">Get Starter Code on GitHub →</a>
 
 Created by Bradley Tian (bradley_tian@berkeley.edu)
+
+For PlexTech Curriculum Use Only. Do not redistribute.
 
 ---
 
@@ -56,15 +58,15 @@ Here is an example of a possible implementation of the WiFi Monitor (for referen
 
 First of all, let us walk through the technologies already provided for this project.
 
-This project directory named `wifi-curriculum-project` (or `wifi-monitor-curriculum-project` when cloned) is your starting point. All of your frontend development work should be within this directory, whether it'd be the sub-directories you create or the files you make.
+This project directory named `wifi-monitor` is your starting point. All of your frontend development work should be within this directory, whether it'd be the sub-directories you create or the files you make.
 
 We have also provided a functional backend application for you; it will handle the storage and retrieval of user-submitted data. Instructions on how to set up and interact with the backend can be found below.
 
-**[Backend Server Instructions](https://github.com/bradley-tian/wifi-heatmap-curriculum-backend)**
+**Backend Server Instructions** are in the backend folder of this project.
 
 As for styling your components, we recommend the [Material UI](https://mui.com/material-ui/getting-started/) library. You are free to explore standard CSS frameworks, such as tailwind, but these alternatives may take longer to configure.
 
-Finally, for the map-view display, we recommend looking into the [Leaflet.js](https://leafletjs.com/examples/quick-start/) library.
+Finally, for the map-view display, we recommend looking into the [Leaflet.js / React-Leaflet](https://react-leaflet.js.org/docs/start-introduction/) library.
 
 ---
 
@@ -94,7 +96,7 @@ This project shouldn't involve a lot of components; for larger projects that con
 
 For each component, start by looking up the corresponding frameworks in Material UI and importing them as needed. You should keep the number of vanilla HTML components to a minimum. In addition, we recommend looking into [Themes](https://mui.com/material-ui/customization/theme-components/#theme-default-props) if you find it helpful to standardize the styling of components.
 
-### 6. Research async functions and fetch calls
+### 6. Research `async` functions and `fetch` calls
 
 These will be the essentials for communicating with the backend server. Once covered in lecture, research `useState` and `useEffect` hooks to determine where you can make API calls to store and retrieve user data.
 
@@ -113,6 +115,38 @@ When you have the API interactions functional, you can then integrate them into 
 ### 8. If you decide to go with the map approach
 
 Import the Leaflet.js library and begin tinkering with the frameworks there. Following the [quickstart guide](https://leafletjs.com/examples/quick-start/) is helpful here.
+
+**Leaflet Map Helpful Hints:**
+
+The relevant imports that you want to use for this are:
+
+```javascript
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import markerIconPng from "leaflet/dist/images/marker-icon.png";
+
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Button, FormControl } from "@mui/material";
+```
+
+Here is some code you can use as reference for the map:
+
+```jsx
+<div style={{
+  height: '70vh',
+  marginBottom: '1rem',
+  borderRadius: '1.5rem',
+  borderStyle: 'solid',
+  borderWidth: 'thin',
+  borderColor: '#25B4E7'
+}}>
+  <MapContainer center={[latitude, longitude]} zoom={17} scrollWheelZoom={true}>
+    <TileLayer
+      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    />
+  </MapContainer>
+</div>
+```
 
 ---
 
