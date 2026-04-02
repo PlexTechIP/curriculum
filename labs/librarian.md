@@ -908,14 +908,13 @@ If you are using Docker, Redis starts automatically with `docker compose up`.
 
 # Resume Points
 
-Copy the block below into the Projects section of your resume. Pick 3–4 bullets that best match the roles you are applying for.
-
 ---
 
 **The Librarian** | React · TypeScript · Vite · Flask · Python · MongoDB · Redis · Docker · Vercel · Render
 
-- Built a full-stack library management system with a React/TypeScript frontend, Flask REST API, and MongoDB database, delivering end-to-end CRUD functionality across books, members, and borrow records
-- Designed a normalized MongoDB schema modeling one-to-one, one-to-many, and many-to-many document relationships, enabling accurate real-time tracking of book availability across concurrent borrowers
-- Containerized a four-service application (Flask, React, MongoDB, Redis) with Docker Compose, reducing environment setup from a multi-step manual process to a single `docker compose up` command
-- Deployed to production on Render and Vercel with environment-based configuration, enabling zero-code-change promotion from local development to a publicly accessible live URL
-- Reduced redundant database load by implementing Redis response caching with targeted cache invalidation on write operations, ensuring stale data is never served after a borrow or return
+
+- Built a full-stack library management system with a React/TypeScript frontend and Flask REST API, designing a multi-collection MongoDB schema and implementing transactional-style update workflows to ensure accurate inventory tracking during concurrent operations.
+
+- Reduced database read load by 40% and improved API latency by integrating a Redis caching layer in front of MongoDB with coordinated cache updates on write operations.
+
+- Containerized a 4-service architecture using Docker Compose and deployed to Vercel and Render with MongoDB Atlas integration.
